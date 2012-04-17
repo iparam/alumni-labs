@@ -1,4 +1,6 @@
 AlumniLabs::Application.routes.draw do
+ 
+
   devise_for :users
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
@@ -6,7 +8,8 @@ AlumniLabs::Application.routes.draw do
     get "/signup" => "devise/registrations#new"
   end
    root :to =>"home#index"
-
+   mount Profile::Engine=> "/profile",          :as => "profile"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
