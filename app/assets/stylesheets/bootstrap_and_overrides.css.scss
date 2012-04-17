@@ -1,5 +1,5 @@
-$iconSpritePath: image-path('glyphicons-halflings.png');
-$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
+/*$iconSpritePath: image-path('glyphicons-halflings.png');
+$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');*/
 
 $navbarBackground: #555;
 $navbarBackgroundHighlight: #888;
@@ -14,4 +14,19 @@ body { padding-top: 60px; }
 
 .navbar .brand {
   color: #FAFFB8;
+}
+.div-center {
+  margin:0 auto;
+  .width500{
+    width:500px;
+  }
+}
+
+.margin-top-m18{ margin-top:-18px; }
+
+a.white-link { color:white !important; }
+a.black-link { color:#333333 !important; }
+a.red-link { color:red !important; }
+.width250{
+    width: 250px !important;
 }
