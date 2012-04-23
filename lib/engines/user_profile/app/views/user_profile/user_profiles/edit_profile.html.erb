@@ -1,0 +1,95 @@
+<%= content_for :head do %>
+<script src="/javascripts/user_profile.js" type="text/javascript"></script>
+<% end %>
+
+<div class='page-header'>
+  <div class='pull-right'>
+     <%= link_to raw("&larr; Back to Profile"),profile_path(@user.id),:class=>'btn  btn-medium custom-visted' %>
+  
+   
+  </div> 
+    <h1><%= @user.name %> Profile</h1>
+</div>
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <%= link_to "Basic Info","#basic_info_nav","data-toggle"=>"tab" %>
+     </li>
+    <li>
+      <%= link_to "Objective","#objective_nav","data-toggle"=>"tab" %>
+     </li>
+     <li>
+      <%= link_to "Education","#education_nav","data-toggle"=>"tab" %>
+     </li>
+     <li>
+      <%= link_to "Experience","#experience_nav","data-toggle"=>"tab" %>
+     </li>
+     <li>
+      <%= link_to "Project","#project_nav","data-toggle"=>"tab" %>
+     </li>
+  </ul>
+  
+</div>
+
+
+<%= nested_form_for(@user,:url=>update_profile_path,:html => {:class => 'form-horizontal'}) do |f| %>
+  <%if @user.errors.present? %>
+    <div class="alert">
+      <a class="close" href="#" data-dismiss="alert">x</a>
+      <ol>
+        <%=profile_error_messages(@user) %>
+      </ol>  
+    </div>  
+    <% end %>
+    <div class="tab-content">
+      <div class="tab-pane active" id="basic_info_nav">
+        <h2> Basic Information</h2>
+        <hr>
+         <%=f.fields_for :user_info do |u| %>
+          <%= render :partial => "user_info_field", :locals => {:builder => u ,:f=>f} %>
+         <% end %> 
+        <div class="form-actions">
+          <%= f.submit "Save",:class=>"btn btn-primary" %>
+         </div> 
+      
+      <hr />
+         </div>
+      <div class="tab-pane" id="objective_nav">
+        <h2> Objective</h2>
+        <hr>
+         <%=f.fields_for :objective do |u| %>
+          <%= render :partial => "objective_field", :locals => {:builder => u } %>
+         <% end %> 
+        <div class="form-actions">
+          <%= f.submit "Save",:class=>"btn btn-primary" %>
+         </div> 
+      
+      <hr />
+         </div>
+      <div class="tab-pane" id="education_nav" %>     
+        <h2> Education</h2>
+        <%= f.fields_for :educations do |u| %>
+          <%= render :partial => "educations_fields", :locals => {:builder => u } %>
+        <% end %>   
+        <%= f.link_to_add "Add Education", :educations  ,:class=>"btn" %>
+       <div class="form-actions">
+          <%= f.submit "Save",:class=>"btn btn-primary" %>
+         </div> 
+          <hr />
+       </div>  
+      <div class="tab-pane" id="experience_nav" %>     
+        <h2> Education</h2>
+        <%= f.fields_for :experiences do |u| %>
+          <%= render :partial => "experiences_fields", :locals => {:builder => u } %>
+        <% end %>   
+        <%= f.link_to_add "Add Experience", :experiences  ,:class=>"btn" %>
+       <div class="form-actions">
+          <%= f.submit "Save",:class=>"btn btn-primary" %>
+         </div> 
+      <hr />  
+     </div>  
+    
+  </div>
+  <% end %>
+
+</div>

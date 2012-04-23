@@ -1,0 +1,38 @@
+
+<div class='page-header'>
+
+  <div class='pull-right'>
+
+  <%= link_to 'Add University', new_university_profile_path,:class=>'btn btn-primary btn-medium custom-visted' %>
+   
+  </div> 
+    <h1>Universities</h1>
+</div>  
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Summary</th>
+      <th width="12%"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+<% @university_profiles.each do |university_profile| %>
+  <tr>
+    <td><%= link_to university_profile.name,university_profile %></td>
+    <td><%= markdown(university_profile.address) %></td>
+    <td><%= university_profile.summary %></td>
+    <td >
+    <%= link_to "Edit", edit_university_profile_path(university_profile), class: "btn" %>
+    <%= link_to delete_btn, university_profile, confirm: 'Are you sure?', method: :delete,class: "btn btn-danger" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+ <div class='pull-right margin-top-m18'>   
+  <%= paginate @university_profiles %>
+ </div>

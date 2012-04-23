@@ -17,11 +17,14 @@ module ApplicationHelper
 	
 	def active_class
    classes = {
-     'home' => 'home'
+     'home' => 'home',
+     'university_profiles'=>'profile'
      
      }
+ 
 	  classes[controller.controller_name + '.' + controller.action_name] || classes[controller.controller_name] || ''
  end		
+
 
  def active_nav_class(class_name)
 	 active_class == class_name ? "active" : ""
@@ -40,6 +43,14 @@ module ApplicationHelper
 
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
+  end
+  
+  def delete_btn(text="Delete")
+    "<i class='icon-trash icon-white'></i> #{text}".html_safe
+  end
+  def markdown(content)
+    markdown =Redcarpet::Markdown.new(Redcarpet::Render::XHTML,:hard_wrap=>true,:filter_html=>true,:autolink=>true,:no_intra_emphasis=>true)
+    markdown.render(content).html_safe
   end
   
   

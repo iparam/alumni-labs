@@ -9,20 +9,26 @@
       <a class="brand" href="#">Alumnii Labs</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="<%= active_nav_class('home') %>"><%= link_to raw("<i class='icon-home icon-white'></i> Home"), root_path %></li>
+          <li class="<%= active_nav_class('home') %>"><%= link_to raw("<i class='icon-home icon-white'></i> Home"), main_app.root_path %></li>
+        <% if current_user %>
+        <li class="<%= active_nav_class('profile') %>">
+          <%= link_to "University", user_profile.university_profiles_path %>
+        </li>
+        <li class="<%= active_nav_class('profile') %>">
+          <%= link_to "Profile", user_profile.profile_path(current_user) %>
+        </li>
+         <% end %> 
         </ul>
-
-        
 
         <p class="navbar-text pull-right">
           <% if current_user %>
-            Logged in as <b><%= current_user.name || urrent_user.email%></b>
+            Logged in as <b><%= current_user.name || current_user.email%></b>
             |
-            <a href="<%=logout_path%>" class='white-link'>Logout</a>
+            <a href="<%=main_app.logout_path%>" class='white-link'>Logout</a>
           <% else %>
-            <%= link_to "Sign up", signup_path, :class => 'white-link'%>
+            <%= link_to "Sign up", main_app.signup_path, :class => 'white-link'%>
             |
-            <%= link_to "Login", login_path, :class => 'white-link'%>
+            <%= link_to "Login", main_app.login_path, :class => 'white-link'%>
           <% end %>
         </p>
       </div><!--/.nav-collapse -->

@@ -1,0 +1,29 @@
+
+<div class='page-header'>
+  <div class='pull-right'>
+    <% if @user.id == current_user.id %>
+      <%= link_to "Edit Profile",edit_profile_path,:class=>'btn btn-primary btn-medium custom-visted' %>
+    <% end %>
+   
+  </div> 
+    <h1><%= @user.name %> Profile</h1>
+</div>  
+<div>
+  <div class="span1 thumbnail" style="margin-right:15px">
+    <%# user_img = user.avatar.url.include?("missing.png") ? "/assets/default_user.png" : user.avatar.url(:thumb) %>
+    <%=h image_tag("default_user.png") %>
+  </div>
+
+  <div class="user-profile-details" >
+    <p>        
+      <b>Name:</b>
+      <%=h @user.name %>
+    </p>
+     <p>        
+      <b>Name:</b>
+      <%=h @user.name %>
+    </p>
+
+    
+  </div>
+</div>

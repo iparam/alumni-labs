@@ -8,8 +8,8 @@ AlumniLabs::Application.routes.draw do
     get "/signup" => "devise/registrations#new"
   end
    root :to =>"home#index"
-   mount Profile::Engine=> "/profile",          :as => "profile"
-  
+
+    mount UserProfile::Engine => "/profile"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
