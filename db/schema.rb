@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20120423114502) do
     t.string   "name"
     t.string   "company_name"
     t.boolean  "on_going"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.integer  "start_date"
+    t.integer  "end_date"
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false

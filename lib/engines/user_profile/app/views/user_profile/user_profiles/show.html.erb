@@ -15,15 +15,24 @@
   </div>
 
   <div class="user-profile-details" >
-    <p>        
-      <b>Name:</b>
-      <%=h @user.name %>
-    </p>
-     <p>        
-      <b>Name:</b>
-      <%=h @user.name %>
-    </p>
-
+    <div>  
+      <div>
+        <%= @user.name %><%= " ( #{@user.objective.title} )" if @user.objective && @user.objective.title%>
+      </div>
+      <div>
+        <%= @user.user_info.university_profile.try(:name) %>
+      </div>
+      
+       <div><%=education_info(@user.user_info)%></div>
+    </div>
+    <div>  
+      
+      <div class="title-text">Summary:</div>      
+      <div class="title-body">
+        <%= markdown(@user.objective.objective) if @user.objective %>
+      </div>
+    
+    </div>
     
   </div>
 </div>

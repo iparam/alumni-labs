@@ -1,6 +1,8 @@
 module UserProfile
   class Engine < ::Rails::Engine
     isolate_namespace UserProfile
-    config.asset_path = "/my_blog_assets%s"
+   initializer 'user_profile.helper' do |app|  
+     ActionView::Base.send :include, UserProfile::UserProfilesHelper  
+    end  
   end
 end

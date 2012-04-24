@@ -1,3 +1,4 @@
+
 module ApplicationHelper
   def sidebar_enabled?
 		current_page = "#{controller.controller_name}.#{controller.action_name}"
@@ -52,6 +53,11 @@ module ApplicationHelper
     markdown =Redcarpet::Markdown.new(Redcarpet::Render::XHTML,:hard_wrap=>true,:filter_html=>true,:autolink=>true,:no_intra_emphasis=>true)
     markdown.render(content).html_safe
   end
-  
+   def set_display_class(user)
+    user.is_alumni? ? "" : "none"
+  end
+  def set_year_class(user)
+    user.is_alumni? ? "none" : ""
+  end
   
 end

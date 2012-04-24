@@ -26,14 +26,14 @@
     <%= f.check_box :alumni %>
   </label>
 </div>  
-<div class="control-group" style="display:none" id="passing_year">
+<div class="control-group <%= set_display_class(@user) %>" id="passing_year">
   <%= builder.label :year_of_passing,:class=>"control-label" %>
   <div class="controls">
     <%= builder.select :year_of_passing,options_for_select(options_for_education_year,builder.object.year_of_passing.try(:to_i)),{:prompt=>"-YY-"} %>
    </div> 
 </div>
 
-<div class="control-group" id="current_year">
+<div class="control-group <%= set_year_class(@user) %>" id="current_year">
   <%= builder.label :year,:class=>"control-label" %>
   <div class="controls">
     <%= builder.text_field :current_year %>

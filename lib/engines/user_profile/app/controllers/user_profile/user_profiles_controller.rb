@@ -19,17 +19,25 @@ module UserProfile
     end
     def update_profile
       @user = UserProfile::User.find(current_user.id)
-        if @user.update_attributes(params[:user])
-      redirect_to profile_path(@user)
-    else
-      render :action=>"edit_profile"  
-    end
+       # binding.pry
+      if @user.update_attributes(params[:user])
+        redirect_to profile_path(@user)
+      else
+        @universities =UniversityProfile.all
+        @user.user_info || @user.build_user_info
+        @user.objective || @user.build_objective
+        
+        render :action=>"edit_profile"  
+      end
     end
     def edit_profile
       @user = UserProfile::User.find(current_user.id)
-      @universities =UniversityProfile.all
+      @universities = UniversityProfile.all
+      @expo = @user.expos || @user.expos.new
+   #   binding.pry
       @user.user_info || @user.build_user_info
       @user.objective || @user.build_objective
+
     end
   end
 end  
