@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @university_profile.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @university_profile.address %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @university_profile.summary %>
+</p>
+
+
+<%= link_to 'Edit', edit_university_profile_path(@university_profile) %> |
+<%= link_to 'Back', university_profiles_path %>

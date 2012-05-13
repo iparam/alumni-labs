@@ -11,15 +11,20 @@
         <ul class="nav">
           <li class="<%= active_nav_class('home') %>"><%= link_to raw("<i class='icon-home icon-white'></i> Home"), main_app.root_path %></li>
         <% if current_user %>
-        <li class="<%= active_nav_class('profile') %>">
-          <%= link_to "University", user_profile.university_profiles_path %>
-        </li>
+          <% if  current_user.has_role?('super_admin')%>
+            <li class="<%= active_nav_class('university') %>">
+              <%= link_to "University", user_profile.university_profiles_path %>
+            </li>
+          <% end %>
         <li class="<%= active_nav_class('profile') %>">
           <%= link_to "Profile", user_profile.profile_path(current_user) %>
         </li>
+        
          <% end %> 
         </ul>
-
+        <form class="navbar-search pull-left" action="">
+            <input type="text" class="search-query span2" placeholder="Search People">
+          </form>
         <p class="navbar-text pull-right">
           <% if current_user %>
             Logged in as <b><%= current_user.name || current_user.email%></b>

@@ -1,5 +1,6 @@
 
 module ApplicationHelper
+
   def sidebar_enabled?
 		current_page = "#{controller.controller_name}.#{controller.action_name}"
 		current_controller = controller.controller_name
@@ -17,12 +18,12 @@ module ApplicationHelper
 	end
 	
 	def active_class
+
    classes = {
      'home' => 'home',
-     'university_profiles'=>'profile'
+     'university_profiles'=>'university'
      
      }
- 
 	  classes[controller.controller_name + '.' + controller.action_name] || classes[controller.controller_name] || ''
  end		
 

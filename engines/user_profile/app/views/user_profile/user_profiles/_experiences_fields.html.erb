@@ -1,0 +1,36 @@
+<div class="control-group">
+  <%= builder.label :title,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_field :title,:class=>"span5"%>
+   </div> 
+</div>
+<div class="control-group">
+  <%= builder.label :company_name,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_field :company_name,:class=>"span5" %>
+   </div> 
+</div>
+<div class="control-group">
+  <%= builder.label :description,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_area :description,:rows=>5,:class=>"span5" %>
+   </div> 
+</div>
+<div class="control-group">
+  <%= builder.label :is_current,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.check_box :is_current%>
+   </div> 
+</div>
+<div class="control-group">
+  <%= builder.label "Duration",:class=>"control-label" %>
+  <div class="controls">
+    <%=  builder.select :start_date ,options_for_select(options_for_education_year,builder.object.start_date.try(:to_i)),{:prompt=>"-YY-"}%> TO
+   <%=  builder.select :end_date ,options_for_select(options_for_education_year,builder.object.end_date.try(:to_i)),{:prompt=>"-YY-"}%>
+   </div>
+</div>   
+<div class="control-group">
+  <div class="controls">    
+    <%= builder.link_to_remove "Remove this Experience" ,:class=>'btn' %>
+   </div>
+</div>

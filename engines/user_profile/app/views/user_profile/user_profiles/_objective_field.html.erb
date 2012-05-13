@@ -1,0 +1,33 @@
+<div class="control-group">
+  <%= builder.label :title,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_field :title,:class=>"span5"%>
+   </div> 
+</div>
+
+<div class="control-group">
+  <%= builder.label "Objective/Goal",:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_area :objective,:rows=>5,:class=>"span5" %>
+   </div> 
+</div>
+
+<div class="control-group">
+  <%= builder.label :specialities,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_area :specialities,:rows=>4 ,:class=>"span5" %>
+   </div> 
+</div>
+
+<div class="control-group">
+  <%= builder.label :area_of_interest,:class=>"control-label" %>
+  <div class="controls">
+    <%= builder.text_area :area_of_interest,:rows=>3,:class=>"span5"  %>
+   </div> 
+</div>
+<div class="control-group">
+  <div class="controls">    
+    <%#= builder.link_to_remove "Remove Objective" ,:class=>'btn' %>
+   </div>
+</div> 
+
