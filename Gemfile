@@ -42,10 +42,10 @@ gem "thin"
 # Deploy with Capistrano
 # gem 'capistrano'
 
-  
+gem 'pry'  
 group :development do
 gem 'wirble'
-gem 'pry'
+
   gem 'annotated-rails'
 
   #gem 'annotate', '2.4.1.beta1'
