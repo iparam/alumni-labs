@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+u=User.create(name:"Amar Daxini",email: "amardaxini@gmail.com",password: "Admin123",password_confirmation: "Admin123")
+u.add_role("super_admin")
+un =UniversityProfile.create(name: "K.J Somaiya C.O.E",address: "Vidyanagar, Vidyavihar(E), Mumbai - 400 077, Maharashtra, India.")
+un.university_courses.create(name: "Information Technology")
