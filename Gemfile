@@ -24,6 +24,7 @@ end
  gem "rolify"
  gem "redcarpet"
  gem 'kaminari'
+ gem 'cancan'
  gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
  gem 'carrierwave'
 #ENGINE CODE
