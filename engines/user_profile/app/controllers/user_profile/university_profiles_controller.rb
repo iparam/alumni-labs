@@ -4,6 +4,8 @@ module UserProfile
     # GET /university_profiles.json
     def index
       @page = params[:page] || 1
+      require 'pry'
+      binding.pry
       @university_profiles = UniversityProfile.page(@page)
   
       respond_to do |format|

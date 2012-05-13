@@ -1,7 +1,7 @@
 module UserProfile
   class Engine < ::Rails::Engine
     isolate_namespace UserProfile
-  initializer 'user_profile.helper' do |app|  
+    initializer 'user_profile.helper' do |app|  
      ActionView::Base.send :include, UserProfilesHelper  
     end  
     config.to_prepare do

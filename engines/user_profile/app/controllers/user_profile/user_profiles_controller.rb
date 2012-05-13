@@ -25,7 +25,7 @@ module UserProfile
       if @user.update_attributes(params[:user])
         redirect_to profile_path(@user)
       else
-        @universities =UniversityProfile.all
+        @universities = UniversityProfile.all
         @user.user_info || @user.build_user_info
         @user.objective || @user.build_objective
         

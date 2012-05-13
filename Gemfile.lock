@@ -5,7 +5,7 @@ GIT
     nested_form (0.2.0)
 
 PATH
-  remote: lib/engines/user_profile
+  remote: engines/user_profile
   specs:
     user_profile (0.0.1)
       rails (~> 3.2.3)

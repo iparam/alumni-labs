@@ -1,6 +1,6 @@
 module UserProfile
   module UserProfilesHelper
-   unloadable
+   
   def profile_error_messages(user)
     errors = ""
     if user.errors.present?
@@ -16,9 +16,9 @@ module UserProfile
   end
   def options_for_education_year
       (1970...2012).to_a.collect {|x| x}
-    end
+   
   end
   
   
-  
+  end  
 end

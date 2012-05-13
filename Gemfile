@@ -27,7 +27,7 @@ end
  gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
  gem 'carrierwave'
 #ENGINE CODE
- gem 'user_profile',:path => 'lib/engines/user_profile'
+ gem 'user_profile',:path => 'engines/user_profile'
   gem "journey"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,9 +41,10 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-  gem 'pry'
+  
 group :development do
 gem 'wirble'
+gem 'pry'
   gem 'annotated-rails'
 
   #gem 'annotate', '2.4.1.beta1'
