@@ -30,7 +30,8 @@ end
 #ENGINE CODE
  gem 'user_profile',:path => 'engines/user_profile'
 gem "journey"
-gem "thin"
+#gem "thin"
+gem 'unicorn'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
