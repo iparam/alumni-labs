@@ -28,7 +28,8 @@ end
  gem 'carrierwave'
 #ENGINE CODE
  gem 'user_profile',:path => 'engines/user_profile'
-  gem "journey"
+gem "journey"
+gem "thin"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
