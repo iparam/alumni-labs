@@ -6,7 +6,8 @@ AL = (function($, window, document, AlumiLabs){
 	 	 toggleAlumniYear: function(){
 	 	  $("#user_alumni").click(function(){
 	 	    alert("s");
-	 	    if($("#user_alumni").attr('checked')== true)
+	 	    // if($("#user_alumni").is(:checked))
+	 	    if($("#user_alumni").attr("checked")== true)
 	 	    {
 	 	      $("#passing_year").toggle();
 	 	      $("#current_year").toggle();
